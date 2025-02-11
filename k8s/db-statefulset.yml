@@ -38,7 +38,7 @@ spec:
             - name: POSTGRES_USER
               value: postgres
             - name: POSTGRES_PASSWORD
-              value: [your_postgresql_password]
+              value: eva05
             - name: POSTGRES_DB
               value: kii_project
           volumeMounts:

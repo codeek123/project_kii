@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - [your_branch_name]
+      - 'master'
 
 jobs:
   build:
@@ -29,7 +29,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t [your_docker_hub_username]/app:latest .
+        run: docker build -t evakoceva/app:latest .
 
       - name: Push Docker image to Docker Hub
-        run: docker push [your_docker_hub_username]/app:latest
+        run: docker push evakoceva/app:latest

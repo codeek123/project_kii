@@ -14,13 +14,13 @@ spec:
     spec:
       containers:
         - name: myapp
-          image: [your_docker_hub_username]/app:latest
+          image: evakoceva/app:latest
           env:
             - name: SPRING_DATASOURCE_URL
               value: "jdbc:postgresql://db-statefulset.myapp-namespace.svc.cluster.local:5432/kii_project"
             - name: SPRING_DATASOURCE_USERNAME
               value: "postgres"
             - name: SPRING_DATASOURCE_PASSWORD
-              value: ""
+              value: "eva05"
           ports:
             - containerPort: 8080
