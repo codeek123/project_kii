@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: myapp
+          image: [your_docker_hub_username]/app:latest
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:postgresql://db-statefulset.myapp-namespace.svc.cluster.local:5432/kii_project"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "postgres"
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: ""
+          ports:
+            - containerPort: 8080
